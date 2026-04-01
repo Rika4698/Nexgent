@@ -3,20 +3,24 @@
 /* FONTS  */
 @font-face {
   font-family: "Satoshi";
-  src: url("/fonts/Satoshi-Regular.ttf") format("truetype");
-  font-weight: 400;
+  src: url("/fonts/Satoshi-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
 }
 
 @font-face {
   font-family: "Satoshi";
-  src: url("/fonts/Satoshi-Bold.ttf") format("truetype");
-  font-weight: 700;
+  src: url("/fonts/Satoshi-VariableItalic.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
 }
+
 
 @font-face {
   font-family: "Instrument Serif";
   src: url("/fonts/InstrumentSerif-Regular.ttf") format("truetype");
   font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
@@ -35,6 +39,20 @@
 
   --color-background: 0 0% 100%;
   --color-foreground: 222.2 84% 4.9%;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans) !important;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif) !important;
+  }
 }
 
 html {

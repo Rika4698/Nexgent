@@ -1,7 +1,7 @@
 
 
 import "./globals.css";
-
+import { cn } from "@/lib/utils";
 
 
 
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={` cn("h-full antialiased scroll-smooth", "font-sans",)`}
+      className={cn("h-full antialiased scroll-smooth", "font-sans")}
     >
       <body className="min-h-full flex flex-col bg-[#0C1F0F] overflow-x-hidden">{children}</body>
     </html>
