@@ -45,7 +45,7 @@ export default function Navbar() {
       initial="rest"
       whileHover="hover"
       animate="rest"
-      className={`hidden lg:block relative  items-center justify-center rounded-full overflow-hidden px-4 py-3 text-base font-semibold text-black bg-white -mr-4 `}
+      className={"hidden lg:block relative  items-center justify-center rounded-full overflow-hidden px-4 py-3 text-base font-semibold text-black bg-white -mr-4 "}
     >
       <motion.span
         variants={{

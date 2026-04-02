@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 /* FONTS  */
 @font-face {
@@ -31,20 +33,49 @@
 }
 
 
-@theme {
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
   --font-sans: "Satoshi", Arial, sans-serif;
   --font-serif: "Instrument Serif", serif;
 
-  --radius: 0.75rem;
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-ring: hsl(var(--ring));
+}
 
-  --color-background: 0 0% 100%;
-  --color-foreground: 222.2 84% 4.9%;
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --border: 214 32% 91%;
+  --ring: 215 20% 65%;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --border: 0 0% 100% / 10%;
+  --ring: 215 20% 65%;
 }
 
 @layer base {
+  * {
+   
+    border-color: hsl(var(--border));
+    outline-color: hsl(var(--ring) / 0.5);
+  }
+
+  html {
+    @apply font-sans;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
   body {
+    @apply bg-background text-foreground;
     font-family: var(--font-sans);
-    
+    overflow-x: hidden;
   }
 
   .font-sans {
@@ -56,7 +87,11 @@
   }
 }
 
+
+
 html {
   overflow-x: hidden;
   overflow-y: scroll;
 }
+
+
