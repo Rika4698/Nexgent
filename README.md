@@ -1,8 +1,8 @@
 # Nexgent
 
-### Overview: Designed and developed a modern, responsive landing page for **Nexgent**, a smart task management platform, using Next.js, Tailwind CSS, and Framer Motion.
+#### **Overview:** Designed and developed a modern, responsive landing page for **Nexgent**, a smart task management platform, using Next.js, Tailwind CSS, and Framer Motion.
 
-## Live link: https://nexgent-delta.vercel.app/
+### Live link: https://nexgent-delta.vercel.app/
 
 ---
 
@@ -55,4 +55,15 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-© 2026 Nexgent. All rights reserved.
+
+## 👤 Code Author & Contact
+
+**Name: Sharmin Akter Reka**
+<br/>
+**Role: Frontend Developer**
+<br/>
+**Portfolio: https://sharmin-rika-portfolio.vercel.app/**
+
+---
+
+All rights reserved.© 2026 Nexgent.
