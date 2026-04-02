@@ -99,7 +99,7 @@ export default function Hero() {
             style={{
               rotateX,
               scale,
-            
+
               transformStyle: "preserve-3d",
               willChange: "transform",
             }}

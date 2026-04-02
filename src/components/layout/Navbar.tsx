@@ -1,14 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 
 const links = ["Features", "Benefits", "Pricing", "Comparison", "FAQ"];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+    useEffect(() => {
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+  }, []);
 
   return (
     <motion.nav
@@ -19,10 +25,10 @@ export default function Navbar() {
     >
       <div className="max-w-5xl mx-auto  px-9 flex items-center justify-between h-16 gap-6  mt-2">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <Link href='/'  onClick={() => window.location.reload()} className="flex items-center gap-2">
           <Image src="/nexgent.svg" alt="Nexgent Logo" width={32} height={32} priority />
           <span className="text-white text-xl md:text-2xl font-sans  tracking-tight">Nexgent</span>
-        </div>
+        </Link>
 
         {/* Desktop Links */}
         <ul className="hidden lg:flex items-center gap-7">
