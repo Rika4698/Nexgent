@@ -7,21 +7,23 @@ import Image from "next/image";
 import Dashboard from "../../../public/dashboard.png";
 
 export default function Hero() {
-  const dashboardRef = useRef<HTMLDivElement>(null);
+   const dashboardRef = useRef<HTMLDivElement>(null);
 
+  const { scrollYProgress } = useScroll({
+    target: dashboardRef,
+    offset: ["start end", "end end"],
+  });
 
-  const { scrollYProgress } = useScroll();
-
-  const rawRotateX = useTransform(scrollYProgress, [0, 0.5], [40, 0]);
+  const rawRotateX = useTransform(scrollYProgress, [0, 1], [40, 0]);
   const rotateX = useSpring(rawRotateX, {
     stiffness: 60,
     damping: 20,
     mass: 1,
   });
+  const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 1]);
 
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.9, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
-
+  
   return (
     <section
       className="relative flex flex-col items-center text-white px-6 text-center font-sans"
@@ -86,16 +88,20 @@ export default function Hero() {
 
         {/* Dashboard */}
         <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.9, ease: "easeOut", delay: 0.5 }}
           ref={dashboardRef}
-          className="relative z-50 w-[95vw] sm:w-[80vw] mt-10 mb-[-28vw]"
-          style={{ perspective: "1200px" }}
+          className="relative z-80 w-[95vw] sm:w-[80vw] mt-4 mb-[-28vw]"
+          style={{ perspective: "1200px", transformStyle: "preserve-3d" }}
         >
           <motion.div
             style={{
               rotateX,
               scale,
-              opacity,
+            
               transformStyle: "preserve-3d",
+              willChange: "transform",
             }}
           >
             <Image
