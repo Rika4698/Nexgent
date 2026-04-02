@@ -45,7 +45,7 @@ export default function ProductOverview() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-              className="w-full rounded-3xl p-2 sm:p-4 relative "
+              className="w-full rounded-3xl  flex justify-center  relative "
             >
               <motion.div
                 animate={{ y: [0, 120, 0] }}
@@ -54,7 +54,7 @@ export default function ProductOverview() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute -left-40 top-10 z-10 hidden lg:block"
+                className="absolute -left-20 top-10 z-10 hidden lg:block"
               >
                 <Image
                   src="/copyright.svg"
@@ -72,7 +72,7 @@ export default function ProductOverview() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute -right-40 bottom-10 z-10 hidden lg:block"
+                className="absolute -right-16 bottom-10 z-10 hidden lg:block"
               >
                 <Image
                   src="/ui-animation.png"
@@ -84,7 +84,7 @@ export default function ProductOverview() {
               </motion.div>
 
               <div
-                className="relative rounded-2xl border-4 border-[#A4DFC0] w-full aspect-[16/10]"
+                className="relative rounded-xl lg:rounded-2xl border-4 border-[#A4DFC0]  w-full max-w-md sm:max-w-2xl lg:max-w-5xl aspect-[16/10]"
                 style={{ boxShadow: "0 0 120px 40px #112C1E" }}
               >
                 <Image
@@ -92,7 +92,7 @@ export default function ProductOverview() {
                   alt="Product Overview"
                   fill
                   quality={100}
-                  className="object-fill  rounded-2xl"
+                  className="object-fill  rounded-xl "
                 />
               </div>
             </motion.div>
@@ -129,9 +129,7 @@ export default function ProductOverview() {
                   className="text-center p-6 relative"
                 >
                   {i !== 0 && (
-  <div className="absolute bg-gray-700 
-                  lg:top-6 lg:bottom-6 lg:left-0 lg:right-auto lg:w-px lg:h-auto 
-                  left-4 right-4 top-0 h-px mx-28 lg:mx-0" />
+  <div className="absolute bg-gray-700 lg:top-6 lg:bottom-6 lg:left-0 lg:right-auto lg:w-px lg:h-auto left-4 right-4 top-0 h-px mx-28 lg:mx-0" />
 )}
                   
                   <div className="w-16 h-16 rounded-xl bg-[#1CAF61] flex items-center justify-center mb-4 mx-auto">
